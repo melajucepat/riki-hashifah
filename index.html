@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Pernikahan Riki & Hashifah - Perjalanan Cinta Kami</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== VARIABLES & RESET ===== */
+        :root {
+            --primary-color: #c93c67;
+            --secondary-color: #f8e1e7;
+            --accent-color: #6d597a;
+            --light-color: #fff9fb;
+            --dark-color: #3d2c3d;
+            --text-color: #333;
+            --light-text: #777;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #fff;
+            color: var(--text-color);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ===== HEADER & NAVIGASI ===== */
+        header {
+            background: linear-gradient(135deg, rgba(201, 60, 103, 0.95), rgba(109, 89, 122, 0.95));
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo-icon {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            padding: 5px 0;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h2 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .cta-button:hover {
+            background-color: transparent;
+            border-color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* ===== BAGIAN BLOG ===== */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            display: inline-block;
+            padding-bottom: 10px;
+            position: relative;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .section-title p {
+            color: var(--light-text);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .couple-intro {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+        
+        .couple-intro.reverse {
+            flex-direction: row-reverse;
+        }
+        
+        .couple-photo {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .couple-photo img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .couple-photo:hover img {
+            transform: scale(1.05);
+        }
+        
+        .couple-info {
+            flex: 1;
+        }
+        
+        .couple-info h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .couple-info p {
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        /* ===== APLIKASI PERENCANAAN (STYLE KHUSUS) ===== */
+        .app-section {
+            background-color: var(--light-color);
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 80px;
+            box-shadow: var(--shadow);
+        }
+        
+        .app-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            border-radius: 15px 15px 0 0;
+            margin-bottom: 2rem;
+        }
+        
+        .app-couple-names {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .app-couple-names span {
+            margin: 0 10px;
+        }
+        
+        .app-heart-icon {
+            color: var(--secondary-color);
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            5% { transform: scale(1.2); }
+            10% { transform: scale(1.1); }
+            15% { transform: scale(1.3); }
+            50% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+        
+        .app-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .app-date-countdown {
+            background-color: rgba(255, 255, 255, 0.15);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .app-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            padding: 0 20px;
+            color: var(--text-color);
+        }
+        
+        .app-intro p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .app-section-title {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .app-section-title i {
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .app-grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .app-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .app-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .app-checklist-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .app-checklist-item:last-child {
+            border-bottom: none;
+        }
+        
+        .app-checklist-item input {
+            margin-right: 12px;
+            transform: scale(1.2);
+        }
+        
+        .app-checklist-item.completed {
+            opacity: 0.7;
+        }
+        
+        .app-checklist-item.completed .item-text {
+            text-decoration: line-through;
+        }
+        
+        .app-cost-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .app-cost-total {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            border-top: 2px solid var(--primary-color);
+            margin-top: 10px;
+            padding-top: 10px;
+        }
+        
+        .app-progress-container {
+            margin: 20px 0;
+        }
+        
+        .app-progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .app-progress-bar {
+            height: 18px;
+            background-color: #e0e0e0;
+            border-radius: 9px;
+            overflow: hidden;
+        }
+        
+        .app-progress-fill {
+            height: 100%;
+            background: linear-gradient(to right, #ff9800, var(--primary-color));
+            border-radius: 9px;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.75rem;
+        }
+        
+        .app-savings-input {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .app-input, .app-select {
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            flex-grow: 1;
+        }
+        
+        .app-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+        
+        .app-button:hover {
+            background-color: var(--accent-color);
+        }
+        
+        .app-notes {
+            background-color: var(--secondary-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+        
+        .app-budget-summary {
+            display: flex;
+            justify-content: space-between;
+            background-color: var(--secondary-color);
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        
+        .app-positive {
+            color: #4caf50;
+        }
+        
+        .app-negative {
+            color: var(--primary-color);
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .couple-intro, .couple-intro.reverse {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 0;
+            }
+            
+            nav ul {
+                gap: 20px;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .app-section {
+                padding: 30px 20px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .app-couple-names {
+                font-size: 1.7rem;
+            }
+            
+            .app-grid-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .app-savings-input {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            nav {
+                display: none;
+                width: 100%;
+                margin-top: 15px;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .header-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER & NAVIGASI -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-heart logo-icon"></i>
+                    <h1>Riki & Hashifah</h1>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#couple">Tentang Kami</a></li>
+                        <li><a href="#planning">Perencanaan</a></li>
+                        <li><a href="#story">Cerita Kami</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#gallery">Galeri</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Perjalanan Cinta Riki & Hashifah</h2>
+                <p>Blog pernikahan yang menceritakan persiapan, momen spesial, dan perjalanan kami menuju hari bahagia. Ikuti cerita dan persiapan pernikahan kami di sini!</p>
+                <a href="#planning" class="cta-button">Mulai Perencanaan</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- KONTEN UTAMA -->
+    <main class="container">
+        <!-- TENTANG PASANGAN -->
+        <section id="couple" class="couple-section">
+            <div class="section-title">
+                <h2>Tentang Kami</h2>
+                <p>Kisah dua insan yang bertekad membangun rumah tangga dengan penuh cinta dan perencanaan matang</p>
+            </div>
+            
+            <div class="couple-intro">
+                <div class="couple-photo">
+                    <img src="https://images.unsplash.com/photo-1519751138087-5bf79df62d5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Riki Yusaeri">
+                </div>
+                <div class="couple-info">
+                    <h3>Riki Yusaeri</h3>
+                    <p>Seorang software developer yang menyukai tantangan dan perencanaan yang matang. Riki percaya bahwa pernikahan yang baik adalah yang dipersiapkan dengan detail dan penuh perhitungan.</p>
+                    <p>"Aku ingin memberikan yang terbaik untuk Hashifah, termasuk merencanakan pernikahan kami dengan matang agar hari bahagia kami berjalan lancar dan berkesan."</p>
+                </div>
+            </div>
+            
+            <div class="couple-intro reverse">
+                <div class="couple-photo">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1964&q=80" alt="Hashifah">
+                </div>
+                <div class="couple-info">
+                    <h3>Hashifah</h3>
+                    <p>Seorang guru yang penuh kasih sayang dan perhatian terhadap detail. Hashifah sangat antusias menyiapkan setiap aspek pernikahan mereka agar mencerminkan kepribadian mereka sebagai pasangan.</p>
+                    <p>"Bagiku pernikahan bukan hanya tentang hari H, tapi tentang perjalanan menyiapkannya bersama. Aku senang bisa berbagi proses ini dengan Riki melalui blog ini."</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FITUR BLOG -->
+        <section class="features-section">
+            <div class="section-title">
+                <h2>Apa yang Ada di Blog Ini?</h2>
+                <p>Blog pernikahan kami menawarkan berbagai konten yang akan membantu pasangan lain dalam merencanakan pernikahan mereka</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-calendar-check feature-icon"></i>
+                    <h3>Perencanaan Lengkap</h3>
+                    <p>Dari checklist persiapan hingga kalkulator biaya, semua tersedia untuk membantu Anda merencanakan pernikahan dengan matang.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-book-open feature-icon"></i>
+                    <h3>Cerita & Pengalaman</h3>
+                    <p>Bagikan pengalaman dan momen spesial selama persiapan pernikahan, termasuk tantangan dan solusinya.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-camera feature-icon"></i>
+                    <h3>Galeri Momen</h3>
+                    <p>Kumpulan foto-foto selama proses persiapan hingga hari pernikahan nanti. Setiap momen berharga akan kami abadikan.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-lightbulb feature-icon"></i>
+                    <h3>Tips & Inspirasi</h3>
+                    <p>Berbagai tips pernikahan, inspirasi dekorasi, dan ide unik untuk membuat pernikahan Anda berkesan dan personal.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- APLIKASI PERENCANAAN (INTEGRATED) -->
+        <section id="planning" class="app-section">
+            <h2 style="text-align: center; margin-bottom: 10px; color: var(--dark-color);">Perencana Pernikahan Digital</h2>
+            <p style="text-align: center; margin-bottom: 30px; color: var(--light-text);">
+                Gunakan aplikasi interaktif di bawah ini untuk merencanakan pernikahan Anda
+            </p>
+            
+            <div class="app-container">
+                <div class="app-header">
+                    <h1 class="app-couple-names">
+                        <span>Riki Yusaeri</span>
+                        <i class="fas fa-heart app-heart-icon"></i>
+                        <span>Hashifah</span>
+                    </h1>
+                    <p class="app-subtitle">Aplikasi Perencanaan Pernikahan</p>
+                    <div class="app-date-countdown">
+                        <i class="far fa-calendar-alt"></i>
+                        <span id="countdown">Menuju Hari Bahagia</span>
+                    </div>
+                </div>
+                
+                <div class="app-intro">
+                    <p>Selamat datang di aplikasi perencanaan pernikahan khusus untuk Riki dan Hashifah. Aplikasi ini akan membantu Anda merencanakan segala kebutuhan pernikahan, mengestimasi biaya, dan memantau perkembangan tabungan.</p>
+                    <p>Mulai dengan menandai checklist persiapan, mengatur anggaran, dan mencatat tabungan untuk mewujudkan pernikahan impian Anda.</p>
+                </div>
+                
+                <div class="app-grid-container">
+                    <!-- Checklist Persiapan -->
+                    <section class="app-card">
+                        <h2 class="app-section-title"><i class="fas fa-tasks"></i> Checklist Persiapan</h2>
+                        <p>Centang item yang sudah diselesaikan:</p>
+                        
+                        <div id="checklist-container">
+                            <!-- Checklist items akan diisi oleh JavaScript -->
+                        </div>
+                        
+                        <div class="app-notes">
+                            <p><strong>Catatan:</strong> Prioritaskan item yang memiliki tenggat waktu terdekat. Update progress secara berkala.</p>
+                        </div>
+                    </section>
+                    
+                    <!-- Kalkulator Biaya -->
+                    <section class="app-card">
+                        <h2 class="app-section-title"><i class="fas fa-calculator"></i> Kalkulator Biaya</h2>
+                        <p>Estimasi biaya pernikahan (dalam Rupiah):</p>
+                        
+                        <div id="cost-container">
+                            <!-- Biaya items akan diisi oleh JavaScript -->
+                        </div>
+                        
+                        <div class="app-budget-summary">
+                            <span>Total Biaya:</span>
+                            <span id="total-cost">Rp 0</span>
+                        </div>
+                        
+                        <div class="app-notes">
+                            <p><strong>Tips:</strong> Buat prioritas berdasarkan anggaran yang tersedia. Beberapa item dapat disesuaikan atau dicari alternatif yang lebih hemat.</p>
+                        </div>
+                    </section>
+                    
+                    <!-- Tracker Tabungan -->
+                    <section class="app-card">
+                        <h2 class="app-section-title"><i class="fas fa-piggy-bank"></i> Tracker Tabungan</h2>
+                        <p>Pantau perkembangan tabungan menuju pernikahan:</p>
+                        
+                        <div class="app-progress-container">
+                            <div class="app-progress-label">
+                                <span>Target Tabungan: <span id="target-amount">Rp 150,000,000</span></span>
+                                <span><span id="saved-amount">Rp 0</span> Tersimpan</span>
+                            </div>
+                            <div class="app-progress-bar">
+                                <div class="app-progress-fill" id="savings-progress" style="width: 0%">0%</div>
+                            </div>
+                        </div>
+                        
+                        <div class="app-savings-input">
+                            <input type="number" id="savings-input" class="app-input" placeholder="Jumlah tambahan tabungan (Rp)">
+                            <select id="saver-select" class="app-select">
+                                <option value="both">Riki & Hashifah</option>
+                                <option value="riki">Riki</option>
+                                <option value="hashifah">Hashifah</option>
+                            </select>
+                            <button id="add-savings" class="app-button">Tambah Tabungan</button>
+                        </div>
+                        
+                        <div class="app-budget-summary">
+                            <span>Kekurangan/Sisa:</span>
+                            <span id="remaining-amount">Rp 150,000,000</span>
+                        </div>
+                        
+                        <div class="app-notes">
+                            <p><strong>Rekomendasi:</strong> Usahakan menabung minimal 20% dari penghasilan bulanan masing-masing untuk mempercepat pencapaian target.</p>
+                        </div>
+                    </section>
+                </div>
+                
+                <!-- Ringkasan -->
+                <section class="app-card">
+                    <h2 class="app-section-title"><i class="fas fa-chart-pie"></i> Ringkasan Perencanaan</h2>
+                    <div class="app-grid-container" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                        <div>
+                            <h3>Progress Persiapan</h3>
+                            <div class="app-progress-container">
+                                <div class="app-progress-label">
+                                    <span>Checklist diselesaikan</span>
+                                    <span id="checklist-percentage">0%</span>
+                                </div>
+                                <div class="app-progress-bar">
+                                    <div class="app-progress-fill" id="checklist-progress" style="width: 0%; background-color: var(--accent-color);">0%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Status Anggaran</h3>
+                            <p>Total biaya: <strong id="summary-total-cost">Rp 0</strong></p>
+                            <p>Tabungan terkumpul: <strong id="summary-savings">Rp 0</strong></p>
+                            <p id="summary-status" class="app-negative">Belum cukup tabungan</p>
+                        </div>
+                        <div>
+                            <h3>Rekomendasi</h3>
+                            <ul style="padding-left: 20px; margin-top: 10px;">
+                                <li id="recommendation-1">Mulai tandai checklist yang sudah disiapkan</li>
+                                <li id="recommendation-2">Atur anggaran sesuai prioritas</li>
+                                <li id="recommendation-3">Tambah tabungan secara berkala</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+        
+        <!-- BAGIAN LAIN BLOG (OPTIONAL) -->
+        <section id="story" style="margin-bottom: 80px;">
+            <div class="section-title">
+                <h2>Cerita Cinta Kami</h2>
+                <p>Perjalanan hubungan kami dari pertemuan pertama hingga memutuskan untuk menikah</p>
+            </div>
+            <div style="text-align: center; padding: 40px; background-color: var(--secondary-color); border-radius: 15px;">
+                <p style="font-size: 1.2rem; font-style: italic;">"Cinta sejati adalah ketika dua orang tidak hanya saling mencintai, tetapi juga bersama-sama merencanakan masa depan dengan penuh harapan dan persiapan."</p>
+                <p style="margin-top: 20px; font-weight: bold;">- Riki & Hashifah</p>
+            </div>
+        </section>
+        
+        <!-- GALERI -->
+        <section id="gallery" style="margin-bottom: 80px;">
+            <div class="section-title">
+                <h2>Galeri Momen</h2>
+                <p>Kumpulan momen spesial selama persiapan pernikahan kami</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;">
+                <div style="border-radius: 10px; overflow: hidden; height: 250px; box-shadow: var(--shadow);">
+                    <img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Momen spesial" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="border-radius: 10px; overflow: hidden; height: 250px; box-shadow: var(--shadow);">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" alt="Persiapan" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="border-radius: 10px; overflow: hidden; height: 250px; box-shadow: var(--shadow);">
+                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Venue" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tentang Blog Ini</h3>
+                    <p>Blog ini adalah catatan perjalanan persiapan pernikahan Riki Yusaeri dan Hashifah. Kami berbagi pengalaman, tips, dan alat perencanaan untuk membantu pasangan lain yang sedang mempersiapkan pernikahan.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Navigasi Cepat</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="#home" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: var(--transition); display: block; margin-bottom: 10px;">Beranda</a></li>
+                        <li><a href="#couple" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: var(--transition); display: block; margin-bottom: 10px;">Tentang Kami</a></li>
+                        <li><a href="#planning" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: var(--transition); display: block; margin-bottom: 10px;">Perencana Pernikahan</a></li>
+                        <li><a href="#story" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: var(--transition); display: block; margin-bottom: 10px;">Cerita Cinta Kami</a></li>
+                        <li><a href="#gallery" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: var(--transition); display: block; margin-bottom: 10px;">Galeri</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Kontak Kami</h3>
+                    <p><i class="fas fa-envelope"></i> riki.hashifah@pernikahan.com</p>
+                    <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bandung, Jawa Barat</p>
+                    <p>Untuk pertanyaan seputar pernikahan atau kolaborasi, jangan ragu untuk menghubungi kami.</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span id="current-year"></span> Blog Pernikahan Riki & Hashifah. Semua hak dilindungi. Dibuat dengan <i class="fas fa-heart" style="color: #c93c67;"></i> untuk pasangan yang sedang merencanakan pernikahan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== SCRIPT UNTUK BLOG =====
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+            this.innerHTML = nav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Smooth scroll untuk navigasi
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const nav = document.getElementById('mainNav');
+                    const mobileBtn = document.getElementById('mobileMenuBtn');
+                    
+                    if (nav.classList.contains('active')) {
+                        nav.classList.remove('active');
+                        mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // ===== SCRIPT UNTUK APLIKASI PERENCANAAN =====
+        const weddingData = {
+            weddingDate: new Date(new Date().getFullYear() + 1, 5, 15),
+            checklist: [
+                { id: 1, text: "Menentukan tanggal pernikahan", category: "Awal", completed: true },
+                { id: 2, text: "Membuat guest list (daftar tamu)", category: "Awal", completed: true },
+                { id: 3, text: "Mencari dan booking venue resepsi", category: "Tempat", completed: false },
+                { id: 4, text: "Mencari catering untuk resepsi", category: "Konsumsi", completed: false },
+                { id: 5, text: "Memilih paket fotografi & videografi", category: "Dokumentasi", completed: false },
+                { id: 6, text: "Pemilihan undangan fisik/digital", category: "Undangan", completed: false },
+                { id: 7, text: "Fitting dan pemilihan baju pengantin", category: "Busana", completed: false },
+                { id: 8, text: "Booking dekorasi venue", category: "Dekorasi", completed: false },
+                { id: 9, text: "Memilih musik/band/entertainment", category: "Hiburan", completed: false },
+                { id: 10, text: "Mempersiapkan seserahan", category: "Adat", completed: false },
+                { id: 11, text: "Booking makeup artist", category: "Kecantikan", completed: false },
+                { id: 12, text: "Mempersiapkan honeymoon", category: "Lainnya", completed: false }
+            ],
+            costs: [
+                { id: 1, name: "Venue dan dekorasi", estimated: 50000000, actual: 0 },
+                { id: 2, name: "Catering & konsumsi", estimated: 40000000, actual: 0 },
+                { id: 3, name: "Baju pengantin & aksesoris", estimated: 15000000, actual: 0 },
+                { id: 4, name: "Fotografi & videografi", estimated: 10000000, actual: 0 },
+                { id: 5, name: "Undangan & souvenir", estimated: 8000000, actual: 0 },
+                { id: 6, name: "Makeup artist & salon", estimated: 5000000, actual: 0 },
+                { id: 7, name: "Seserahan & hantaran", estimated: 7000000, actual: 0 },
+                { id: 8, name: "Hiburan (musik/band)", estimated: 6000000, actual: 0 },
+                { id: 9, name: "Lain-lain (akomodasi, dll)", estimated: 10000000, actual: 0 }
+            ],
+            savings: {
+                target: 150000000,
+                current: 0,
+                riki: 0,
+                hashifah: 0
+            }
+        };
+
+        // Load data dari localStorage
+        function loadData() {
+            const savedData = localStorage.getItem('weddingPlannerData');
+            if (savedData) {
+                const parsedData = JSON.parse(savedData);
+                Object.assign(weddingData, parsedData);
+                weddingData.weddingDate = new Date(parsedData.weddingDate);
+            }
+        }
+
+        // Save data ke localStorage
+        function saveData() {
+            localStorage.setItem('weddingPlannerData', JSON.stringify(weddingData));
+        }
+
+        // Inisialisasi saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', function() {
+            loadData();
+            initializeApp();
+            
+            // Set tahun di footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+
+        function initializeApp() {
+            updateCountdown();
+            renderChecklist();
+            renderCosts();
+            updateSavingsDisplay();
+            updateSummary();
+            
+            // Event listeners
+            document.getElementById('add-savings').addEventListener('click', addSavings);
+            document.getElementById('savings-input').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') addSavings();
+            });
+        }
+
+        function updateCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            const today = new Date();
+            const weddingDate = weddingData.weddingDate;
+            
+            const diffTime = weddingDate - today;
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            
+            if (diffDays > 0) {
+                countdownElement.innerHTML = `<i class="far fa-calendar-alt"></i> ${diffDays} hari menuju pernikahan (${formatDate(weddingDate)})`;
+            } else if (diffDays === 0) {
+                countdownElement.innerHTML = `<i class="far fa-calendar-alt"></i> Hari ini adalah hari pernikahan!`;
+            } else {
+                countdownElement.innerHTML = `<i class="far fa-calendar-alt"></i> Pernikahan telah dilaksanakan pada ${formatDate(weddingDate)}`;
+            }
+        }
+
+        function formatDate(date) {
+            const options = { day: 'numeric', month: 'long', year: 'numeric' };
+            return date.toLocaleDateString('id-ID', options);
+        }
+
+        function renderChecklist() {
+            const container = document.getElementById('checklist-container');
+            container.innerHTML = '';
+            
+            const categories = {};
+            weddingData.checklist.forEach(item => {
+                if (!categories[item.category]) {
+                    categories[item.category] = [];
+                }
+                categories[item.category].push(item);
+            });
+            
+            for (const category in categories) {
+                const categoryHeader = document.createElement('h3');
+                categoryHeader.textContent = category;
+                categoryHeader.style.marginTop = '15px';
+                categoryHeader.style.color = 'var(--accent-color)';
+                container.appendChild(categoryHeader);
+                
+                categories[category].forEach(item => {
+                    const itemElement = document.createElement('div');
+                    itemElement.className = `app-checklist-item ${item.completed ? 'completed' : ''}`;
+                    
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.id = `checklist-${item.id}`;
+                    checkbox.checked = item.completed;
+                    checkbox.addEventListener('change', function() {
+                        weddingData.checklist.find(i => i.id === item.id).completed = this.checked;
+                        itemElement.classList.toggle('completed', this.checked);
+                        updateChecklistProgress();
+                        saveData();
+                    });
+                    
+                    const label = document.createElement('label');
+                    label.htmlFor = `checklist-${item.id}`;
+                    label.className = 'item-text';
+                    label.textContent = item.text;
+                    
+                    itemElement.appendChild(checkbox);
+                    itemElement.appendChild(label);
+                    container.appendChild(itemElement);
+                });
+            }
+            
+            updateChecklistProgress();
+        }
+
+        function updateChecklistProgress() {
+            const completed = weddingData.checklist.filter(item => item.completed).length;
+            const total = weddingData.checklist.length;
+            const percentage = Math.round((completed / total) * 100);
+            
+            document.getElementById('checklist-percentage').textContent = `${percentage}%`;
+            document.getElementById('checklist-progress').style.width = `${percentage}%`;
+            document.getElementById('checklist-progress').textContent = `${percentage}%`;
+        }
+
+        function renderCosts() {
+            const container = document.getElementById('cost-container');
+            container.innerHTML = '';
+            
+            let totalEstimated = 0;
+            
+            weddingData.costs.forEach(cost => {
+                totalEstimated += cost.estimated;
+                
+                const costElement = document.createElement('div');
+                costElement.className = 'app-cost-item';
+                
+                const nameElement = document.createElement('span');
+                nameElement.textContent = cost.name;
+                
+                const amountElement = document.createElement('span');
+                amountElement.textContent = `Rp ${formatNumber(cost.estimated)}`;
+                
+                costElement.appendChild(nameElement);
+                costElement.appendChild(amountElement);
+                container.appendChild(costElement);
+            });
+            
+            document.getElementById('total-cost').textContent = `Rp ${formatNumber(totalEstimated)}`;
+            document.getElementById('summary-total-cost').textContent = `Rp ${formatNumber(totalEstimated)}`;
+            
+            updateRecommendations(totalEstimated);
+        }
+
+        function updateSavingsDisplay() {
+            const currentSavings = weddingData.savings.current;
+            const targetSavings = weddingData.savings.target;
+            const percentage = Math.min(Math.round((currentSavings / targetSavings) * 100), 100);
+            const remaining = targetSavings - currentSavings;
+            
+            document.getElementById('savings-progress').style.width = `${percentage}%`;
+            document.getElementById('savings-progress').textContent = `${percentage}%`;
+            
+            document.getElementById('target-amount').textContent = `Rp ${formatNumber(targetSavings)}`;
+            document.getElementById('saved-amount').textContent = `Rp ${formatNumber(currentSavings)}`;
+            document.getElementById('remaining-amount').textContent = `Rp ${formatNumber(remaining)}`;
+            document.getElementById('summary-savings').textContent = `Rp ${formatNumber(currentSavings)}`;
+            
+            const summaryStatus = document.getElementById('summary-status');
+            if (currentSavings >= targetSavings) {
+                summaryStatus.textContent = "Tabungan sudah mencukupi!";
+                summaryStatus.className = "app-positive";
+            } else {
+                summaryStatus.textContent = `Perlu tambahan Rp ${formatNumber(remaining)}`;
+                summaryStatus.className = "app-negative";
+            }
+        }
+
+        function addSavings() {
+            const input = document.getElementById('savings-input');
+            const saver = document.getElementById('saver-select').value;
+            const amount = parseInt(input.value);
+            
+            if (isNaN(amount) || amount <= 0) {
+                alert("Masukkan jumlah tabungan yang valid");
+                return;
+            }
+            
+            weddingData.savings.current += amount;
+            
+            if (saver === 'riki') {
+                weddingData.savings.riki += amount;
+            } else if (saver === 'hashifah') {
+                weddingData.savings.hashifah += amount;
+            } else {
+                weddingData.savings.riki += amount / 2;
+                weddingData.savings.hashifah += amount / 2;
+            }
+            
+            input.value = '';
+            updateSavingsDisplay();
+            updateSummary();
+            saveData();
+            
+            showNotification(`Tabungan berhasil ditambah Rp ${formatNumber(amount)}`);
+        }
+
+        function updateSummary() {
+            updateChecklistProgress();
+            const totalCost = weddingData.costs.reduce((sum, cost) => sum + cost.estimated, 0);
+            updateRecommendations(totalCost);
+        }
+
+        function updateRecommendations(totalCost) {
+            const completedItems = weddingData.checklist.filter(item => item.completed).length;
+            const totalItems = weddingData.checklist.length;
+            const checklistPercentage = Math.round((completedItems / totalItems) * 100);
+            
+            if (checklistPercentage < 30) {
+                document.getElementById('recommendation-1').textContent = "Fokus pada checklist persiapan awal seperti menentukan tanggal dan venue";
+            } else if (checklistPercentage < 70) {
+                document.getElementById('recommendation-1').textContent = "Lanjutkan dengan persiapan dokumentasi, dekorasi, dan konsumsi";
+            } else {
+                document.getElementById('recommendation-1').textContent = "Tinjau ulang semua persiapan dan fokus pada detail terakhir";
+            }
+            
+            const currentSavings = weddingData.savings.current;
+            if (currentSavings < totalCost * 0.3) {
+                document.getElementById('recommendation-2').textContent = "Prioritaskan pengeluaran untuk venue dan catering yang esensial";
+            } else if (currentSavings < totalCost * 0.7) {
+                document.getElementById('recommendation-2').textContent = "Alokasikan dana untuk dokumentasi dan busana pengantin";
+            } else {
+                document.getElementById('recommendation-2').textContent = "Anda bisa mempertimbangkan upgrade untuk hiburan dan dekorasi";
+            }
+            
+            const savingsPercentage = Math.round((currentSavings / totalCost) * 100);
+            if (savingsPercentage < 50) {
+                document.getElementById('recommendation-3').textContent = "Tingkatkan frekuensi menabung, targetkan 30% dari penghasilan bulanan";
+            } else if (savingsPercentage < 100) {
+                document.getElementById('recommendation-3').textContent = "Pertahankan momentum menabung, evaluasi pengeluaran tidak penting";
+            } else {
+                document.getElementById('recommendation-3').textContent = "Tabungan sudah mencukupi, alokasikan keanggaran untuk cadangan";
+            }
+        }
+
+        function formatNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background-color: #4caf50;
+                color: white;
+                padding: 15px 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                z-index: 1000;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Tambahkan style untuk animasi notifikasi
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
